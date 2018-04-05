@@ -23,3 +23,33 @@ outerHTML - содержит HTML элемента целиком
 
 data - cодержимое узлов, доступное на чтение и запись
 textContent - содержит только текст внутри элемента, за вычетом всех <тегов>
+
+Атрибуты:
+  elem.hasAttribute(name) – проверяет наличие атрибута
+  elem.getAttribute(name) – получает значение атрибута
+  elem.setAttribute(name, value) – устанавливает атрибут
+  elem.removeAttribute(name) – удаляет атрибут
+  elem.attributes - получение всех атрибутов свойства
+  className - соответствует атрибуту "class" 
+  
+Свойство classList – это объект для работы с классами
+  elem.classList.contains("class") – возвращает true/false, в зависимости от того, есть ли у элемента класс class
+  elem.classList.add/remove("class") – добавляет/удаляет класс class
+  elem.classList.toggle("class") – если класса class нет, добавляет его, если есть – удаляет
+  Кроме того, можно перебрать классы через for, так как classList – это псевдо-массив
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
