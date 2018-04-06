@@ -31,6 +31,8 @@ textContent - содержит только текст внутри элемен
   elem.removeAttribute(name) – удаляет атрибут
   elem.attributes - получение всех атрибутов свойства
   className - соответствует атрибуту "class" 
+  dataset - позволяет получить доступ к data атрибутам, через свойство (пример: 
+    <div id="elem" data-about="Elephant"> alert(elem.dataset.about);)
   
 Свойство classList – это объект для работы с классами
   elem.classList.contains("class") – возвращает true/false, в зависимости от того, есть ли у элемента класс class
