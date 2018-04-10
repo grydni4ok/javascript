@@ -1,0 +1,32 @@
+Создание элемента
+  1. document.createElement(tag) - создает новый элемент с указанным тегом -> var div = document.createElement('div');
+  2. document.createTextNode(text) - создает новый *текстовый* узел с данным текстом -> var textElem = document.createTextNode('Тут был я');
+  
+Добавление элементов
+  1. parentElem.appendChild(elem) - добавляет elem в конец дочерних элементов parentElem
+  2. parentElem.insertBefore(elem, nextSibling) - вставляет elem в коллекцию детей parentElem, перед элементом nextSibling
+  
+Клонирование узлов
+  1. elem.cloneNode(true) - создаст «глубокую» копию элемента – вместе с атрибутами, включая подэлементы, если же вызвать с 
+  аргументом false, то копия будет сделана без дочерних элементов
+ 
+Удаление узлов
+  1. parentElem.removeChild(elem) - удаляет elem из списка детей parentElem
+  2. parentElem.replaceChild(newElem, elem) - среди детей parentElem удаляет elem и вставляет на его место newElem
+  
+На заметку:
+  Если вы хотите переместить элемент на новое место – не нужно его удалять со старого.
+  Все методы вставки автоматически удаляют вставляемый элемент со старого места.
+  <div>Первый</div>
+  <div>Второй</div>
+  <script>
+    var first = document.body.children[0];
+    var last = document.body.children[1];
+
+    // нет необходимости в предварительном removeChild(last)
+    document.body.insertBefore(last, first); // поменять местами
+  </script>
+  
+Метод remove
+  В современном стандарте есть также метод elem.remove(), который удаляет элемент напрямую, не требуя ссылки на родителя. 
+  Это зачастую удобнее, чем removeChild.
