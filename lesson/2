@@ -1,6 +1,6 @@
 Создание элемента
   1. document.createElement(tag) - создает новый элемент с указанным тегом -> var div = document.createElement('div');
-  2. document.createTextNode(text) - создает новый *текстовый* узел с данным текстом -> var textElem = document.createTextNode('Тут был я');
+  2. document.createTextNode(text) - создает новый *текстовый* узел с данным текстом -> elem.appendChild(document.createTextNode(text));
   
 Добавление элементов
   1. parentElem.appendChild(elem) - добавляет elem в конец дочерних элементов parentElem
