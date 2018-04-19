@@ -30,3 +30,26 @@
 Метод remove
   В современном стандарте есть также метод elem.remove(), который удаляет элемент напрямую, не требуя ссылки на родителя. 
   Это зачастую удобнее, чем removeChild.
+  
+Мультивставка
+  Метод insertAdjacentHTML позволяет вставлять произвольный HTML в любое место документа, в том числе и между узлами!
+  elem.insertAdjacentHTML(where, html);
+  html
+  Строка HTML, которую нужно вставить
+  where :Куда по отношению к elem вставлять строку. Всего четыре варианта:
+  1. `beforeBegin` -- перед `elem`.
+  2. `afterBegin` -- внутрь `elem`, в самое начало.
+  3. `beforeEnd` -- внутрь `elem`, в конец.
+  4. `afterEnd` -- после `elem`.
+  
+  elem.insertAdjacentElement(where, newElem) – вставляет в произвольное место не строку HTML, а элемент newElem.
+  elem.insertAdjacentText(where, text) – создаёт текстовый узел из строки text и вставляет его в указанное место относительно elem.
+  
+  
+  
+  
+  
+  
+  
+  
+  
