@@ -45,6 +45,28 @@
   elem.insertAdjacentElement(where, newElem) – вставляет в произвольное место не строку HTML, а элемент newElem.
   elem.insertAdjacentText(where, text) – создаёт текстовый узел из строки text и вставляет его в указанное место относительно elem.
   
+  DocumentFragment - поможет единовременно вставить пачку узлов, это особенный кросс-браузерный DOM-объект, который похож на обычный 
+  DOM-узел, но им не является,
+  var fragment = document.createDocumentFragment();
+  
+  Вставка чего угодно и куда угодно.
+  node.append(...nodes) – вставляет nodes в конец node,
+  node.prepend(...nodes) – вставляет nodes в начало node,
+  node.after(...nodes) – вставляет nodes после узла node,
+  node.before(...nodes) – вставляет nodes перед узлом node,
+  node.replaceWith(...nodes) – вставляет nodes вместо node.
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
   
   
   
