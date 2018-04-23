@@ -1,0 +1,16 @@
+element.style возвращает объект, который дает доступ к стилю элемента на чтение и запись
+  примеры:
+    element.style.width="100px"
+    background-color  => elem.style.backgroundColor
+    
+Свойство style.cssText позволяет поставить стиль целиком в виде строки. При установке style.cssText 
+все предыдущие свойства style удаляются.
+div.style.cssText="color: red !important; \
+    background-color: yellow; \ ";
+
+Полный стиль из getComputedStyle
+  getComputedStyle(element[, pseudo])
+    element
+    элемент, значения для которого нужно получить
+    pseudo
+    Указывается, если нужен стиль псевдо-элемента, например "::before". Пустая строка или отсутствие аргумента означают сам элемент.
