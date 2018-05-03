@@ -17,4 +17,8 @@ div.style.cssText="color: red !important; \
 
 Размеры и прокрутка элементов
   В offsetParent находится ссылка на родительский элемент в смысле отображения на странице.
-  offsetLeft/Top - задают смещение относительно offsetParent, это смещение
+  offsetLeft/Top - задают смещение относительно offsetParent, это смещение относительно родительского элемента.
+  offsetWidth/Height - они содержат «внешнюю» ширину/высоту элемента, то есть его полный размер, включая рамки border.
+  clientTop/Left - ширина border
+  clientWidth/Height - они включают в себя ширину содержимого width вместе с полями padding, но без прокрутки
+  scrollWidth/Height - аналоги clientWidth/clientHeight, но с учетом прокрутки
