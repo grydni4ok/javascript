@@ -24,3 +24,31 @@ div.style.cssText="color: red !important; \
   scrollWidth/Height - аналоги clientWidth/clientHeight, с учетом области прокрутки (ту которую не видно), без полосы прокрутки
   scrollLeft/scrollTop - ширина/высота невидимой, прокрученной в данный момент, части элемента слева и сверху.
 Все свойства, доступны только для чтения, кроме scrollLeft/scrollTop. Изменение этих свойств заставляет браузер прокручивать элемент.
+
+1) Для получения размеров видимой части окна: document.documentElement.clientWidth/Height
+2) Для получения размеров страницы с учётом прокрутки:
+  var scrollHeight = Math.max(
+    document.body.scrollHeight, document.documentElement.scrollHeight,
+    document.body.offsetHeight, document.documentElement.offsetHeight,
+    document.body.clientHeight, document.documentElement.clientHeight
+  );
+  
+Прокрутку окна можно получить как window.pageYOffset (для горизонтальной – window.pageXOffset)
+Метод window.scrollBy(x,y) прокручивает страницу относительно текущих координат
+Метод window.scrollTo(pageX,pageY) прокручивает страницу к указанным координатам относительно документа
+elem.scrollIntoView(top) – прокрутить, чтобы элемент elem стал виден
+
+elem.getBoundingClientRect() - метод возвращает координаты элемента, под которыми понимаются размеры 
+«воображаемого прямоугольника», который охватывает весь элемент.
+Координаты возвращаются в виде объекта со свойствами:
+  top – Y-координата верхней границы элемента,
+  left – X-координата левой границы,
+  right – X-координата правой границы,
+  bottom – Y-координата нижней границы
+  
+elementFromPoint(x, y) - возвращает элемент, который находится на координатах (x, y) относительно окна.
+var elem = document.elementFromPoint(x, y);
+  
+  
+
+
