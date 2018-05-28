@@ -27,3 +27,10 @@ addEventListener и removeEventListener
   event - имя события, например click
   handler - ссылка на функцию, которую надо поставить обработчиком.
   phase - необязательный аргумент, «фаза», на которой обработчик должен сработать
+
+
+elem.onclick = function(event) {}
+Свойства объекта event:
+  event.type - тип события, в данном случае click
+  event.currentTarget - элемент, на котором сработал обработчик. 
+  event.clientX / event.clientY - координаты курсора в момент клика (относительно окна)
