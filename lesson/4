@@ -34,3 +34,4 @@ elem.onclick = function(event) {}
   event.type - тип события, в данном случае click
   event.currentTarget - элемент, на котором сработал обработчик. 
   event.clientX / event.clientY - координаты курсора в момент клика (относительно окна)
+  event.target – самый глубокий элемент, на котором произошло событие
