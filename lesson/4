@@ -55,13 +55,14 @@ elem.onclick = function(event) {}
     1. Не учитываются переходы внутри элемента.
     2. События mouseenter/mouseleave не всплывают.
   
+Событие wheel - генерируется над любым элементом при передвижении колеса мыши.
+  cвойство deltaY – количество прокрученных пикселей по вертикали. Существуют также свойства deltaX и deltaZ для других 
+  направлений прокрутки.
   
-  
-  
-  
-  
-  
-  
+Onscroll - происходит, когда элемент прокручивается
+  window.onscroll = function() {
+    var scrolled = window.pageYOffset || document.documentElement.scrollTop;
+  }
   
   
   
