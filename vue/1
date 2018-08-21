@@ -1,30 +1,30 @@
 <div id="app">
-		<input type="text" v-on:input="changeName">
-		<h1>Hello {{ name }} </h1> // Vue!
-		<h1>Sum: {{ 10+60 }} </h1> // 70
-		<h1>Method: {{ sayHi() }} hi all
-		<h1>If statement: {{ isOK ? 'i am OK' : 'i am not OK' }} </h1> // i am OK
-		<h1>Functions: {{ string.split('').reverse().join('') }} </h1> // js код
-		<h1><a v-bind:href="url"> {{ url }} </a></h1> // присваивание ссылок
-    <h1 v-html="link"></h1> //вставиться ссылка на google
+  <input type="text" v-on:input="changeName">
+  <h1>Hello {{ name }} </h1> // Vue!
+  <h1>Sum: {{ 10+60 }} </h1> // 70
+  <h1>Method: {{ sayHi() }} hi all
+  <h1>If statement: {{ isOK ? 'i am OK' : 'i am not OK' }} </h1> // i am OK
+  <h1>Functions: {{ string.split('').reverse().join('') }} </h1> // js код
+  <h1><a v-bind:href="url"> {{ url }} </a></h1> // присваивание ссылок
+  <h1 v-html="link"></h1> //вставиться ссылка на google
 </div>
   
 <script>		
-		new	Vue({
-			el: '#app',
-			data: {
-				name: 'Vue!',
-				isOK: true,
-				string: 'My name is Egor',
-				url: 'http://google.com',
-        link: '<a href="http://google.com">google</a>'
-			},
-			methods: {
-				sayHi: function(){
-					return 'hi all'
-				}
-			} 
-		})
+  new Vue({
+    el: '#app',
+      data: {
+      name: 'Vue!',
+      isOK: true,
+      string: 'My name is Egor',
+      url: 'http://google.com',
+      link: '<a href="http://google.com">google</a>'
+    },
+    methods: {
+      sayHi: function(){
+        return 'hi all' 
+      }  
+    } 
+  })
 </script>
 
 Вызов собитый осуществляется с помощья специального атрибута v-on:
