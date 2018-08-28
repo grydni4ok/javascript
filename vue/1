@@ -2,7 +2,7 @@
   <input type="text" v-on:input="changeName">
   <h1>Hello {{ name }} </h1> // Vue!
   <h1>Sum: {{ 10+60 }} </h1> // 70
-  <h1>Method: {{ sayHi() }} hi all
+  <h1>Method: {{ sayHi() }}// hi all
   <h1>If statement: {{ isOK ? 'i am OK' : 'i am not OK' }} </h1> // i am OK
   <h1>Functions: {{ string.split('').reverse().join('') }} </h1> // js код
   <h1><a v-bind:href="url"> {{ url }} </a></h1> // присваивание ссылок
@@ -22,7 +22,10 @@
     methods: {
       sayHi: function(){
         return 'hi all' 
-      }  
+      },
+		  changeName: function(){
+			  this.name = event.target.value
+			}  
     } 
   })
 </script>
@@ -34,11 +37,11 @@
   
 Условия отображения блоков:
   v-if="isVisible" //если значение true, то данный елемент отобразится, если нет то елемента не будет даже в dom дереве
-  v-else/v-else-is //продолжение условия
+  v-else/v-else-if //продолжение условия
   v-show="isVisible" // если значение true, то данный елемент отобразится, если нет то елементу просто присвоят св-во display: none
 
 Модификаторы событий 
-  v-on:click:prevent="" - отсенит собитые нажание на элемент
+  v-on:click:prevent="" - отменит собитые нажание на элемент
   v-on:mousemove:stop="" - отменит событие движение мыши по элементу
   
 Условие выставление классов:
@@ -47,6 +50,40 @@
 :class="[{'red': isActive}, color]" // массив добавления, если значение isActive true, то добавится класс red, иначе значение 
 переменной color
 
+---------------------------------------------------------------------------------
+
+new	Vue({
+	el: '#app',
+	data: {
+		people: [
+			'vlad',
+			'george',
+			'max'
+		],
+		peopleInfo: [
+			{ name: 'vlad', age: 15 },
+			{ name: 'george', age: 20 },
+			{ name: 'max', age: 25 },
+			{ name: 'Igor', age: 35 }
+		],
+		person: {
+			name: 'Alex',
+			age: 19
+		}
+	}
+})
+
+<ul>
+	<li v-for="(pers, index) in people"> {{ index + 1 }} {{ pers }} </li>
+</ul>
+
+<ul>
+	<li v-for="(info, index) of peopleInfo"> {{ index + 1 }} {{ info.name }} {{ info.age }} </li>
+</ul>
+
+<ul>
+	<li v-for="(value, key) in person"> {{ key }} {{ value }} </li>
+</ul>
 
 
 
