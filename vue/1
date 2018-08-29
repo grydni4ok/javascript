@@ -51,7 +51,7 @@
 переменной color
 
 ---------------------------------------------------------------------------------
-
+Работа с массивами и объектами
 new	Vue({
 	el: '#app',
 	data: {
@@ -84,11 +84,24 @@ new	Vue({
 <ul>
 	<li v-for="(value, key) in person"> {{ key }} {{ value }} </li>
 </ul>
+---------------------------------------------------------------------
+Computed (вычисленный) - позволет оптимизировать vue путем меньшего количества обращений
+<h1> {{ returnResult }} </h1>
+computed: {
+	returnResult: function() {
+		console.log('opiration');
+		return this.result = this.counter > 3 ? '>3' : '<3'
+	}
+}
 
+watch - позволяет наблюдать за изменением переменной, и дает возможность делать что-либо при каждом изменении
 
-
-
-
+ref - референции, позволяют находить нужный нам элемент и работать с ним
+<h1 ref="header"> Result</h1>
+<button @click="colorHeader()">change color</button>
+colorHeader: function() {
+	this.$refs.header.style.color = 'green'
+}
 
 
 
