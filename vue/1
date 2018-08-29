@@ -103,6 +103,29 @@ colorHeader: function() {
 	this.$refs.header.style.color = 'green'
 }
 
+Жизненные циклы - beforeCreate -> created -> beforeMount -> mounted -> beforeDestroy -> destroyed
+---------------------------------------------------------------------------------------
+Vue компоненты
+Vue.component('my-counter', {
+	template: `
+		<div style="border: 1px solid #000; padding: 20px;">
+			<h1> counter: {{counter}} </h1>
+			<button @click="add()">add</button>
+		</div>
+	`,
+	data: function() {
+		return {
+			counter: 0
+		}
+	},
+	methods: {
+		add: function() {
+			this.counter++
+		}
+	}
+}) 
+// первое значение переменной строка, по которой мы потом будем обращаться в html коде для вызова <my-counter></my-counter>
+// обратить внимание на поле дата
 
 
 
