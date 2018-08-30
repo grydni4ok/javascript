@@ -1,0 +1,48 @@
+Работа с проектом
+Создадим свой проект, и подключим его глобально.
+Проект Car.vue. Он может состоять из 3х разделов: <template></template>, <script></script>, <style></style>
+
+--Car.vue--
+<template>
+  <div>
+    <h2>Name {{ name }} </h2>  
+    <p>Age {{ age }} </p>
+  </div>
+</template>
+
+<script>
+  export default{
+    data() {
+      return{
+        name: 'Ford',
+	age: 15
+      }
+    }
+  }
+</script>
+-- end Car.vue--
+
+Чтобы подключть его глобально, в файле main.js нужно подключить созданный нами файл Car:
+import Car from './Car.vue' 
+
+Затем перед инициализацией объекта Vue, необходимо глобально объявить компонент:
+Vue.component('app-car', Car);
+После этого на будет доступен компонент <app-car></app-car>
+
+Для подключения компонента локально необходимо подключить Car.vue именно в том vue элементе, который нам необходим, сейчас мы это
+сделаем в файле App.vue:
+В script импортируем файл Car.vue:
+import Car from './Car.vue'
+Затем объявляем в export default создадим component:
+export default {
+  name: 'app',
+  data () {
+    return {
+      msg: 'Welcome to Your Vue.js App'
+    }
+  },
+  components: {
+    appCar: Car // appCar - название компонента, которое будет доступно как app-car
+  }
+}
+После этого нам будет доступен компонент <app-car>
