@@ -1,0 +1,8 @@
+Конструкция, чтобы повесить обрабатчик на событие (используется только для одного события) 
+  document.body.onclick = function(e){
+		console.log(e);
+	}
+Для того чтобы можно было использовать несколько собитий используем конструкцию
+  document.body.addEventListener('click', function(){
+		console.log(0);
+	})
