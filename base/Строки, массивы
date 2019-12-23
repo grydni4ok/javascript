@@ -39,3 +39,6 @@ for (let i = 0; i < arr.length; i++) {
 for (let key in arr) {
   alert( arr[key] ); // Яблоко, Апельсин, Груша
 }
+
+arr.splice(index[, deleteCount, elem1, ..., elemN]) - Он начинает с позиции index, удаляет deleteCount элементов и вставляет 
+elem1, ..., elemN на их место. Возвращает массив из удалённых элементов.
