@@ -41,9 +41,6 @@ unshift - Добавляет элемент в начало массива
 for (let i = 0; i < arr.length; i++) {
   alert( arr[i] );
 }
-for (let key in arr) {
-  alert( arr[key] ); // Яблоко, Апельсин, Груша
-}
 
 Проходит по значениям
 for (let fruit of fruits) {
