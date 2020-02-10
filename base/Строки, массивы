@@ -71,6 +71,16 @@ find и findIndex
     // если все итерации оказались ложными, возвращается undefined
   });
 Если функция возвращает true, поиск прерывается и возвращается item. Если ничего не найдено, возвращается undefined.
+  let users = [
+    {id: 1, name: "Вася"},
+    {id: 2, name: "Петя"},
+    {id: 3, name: "Маша"}
+  ];
+  let user = users.find(item => item.id == 1);
+  alert(user.name); // Вася
+Метод arr.findIndex – по сути, то же самое, но возвращает индекс, на котором был найден элемент, а не сам элемент, и -1, если 
+ничего не найдено.
+
 
 filter
   let results = arr.filter(function(item, index, array) {
