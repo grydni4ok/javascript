@@ -56,4 +56,29 @@ class Rabbit extends Animal {
   }
 }
 
+Переопределение конструктора
+class Animal {
 
+  constructor(name) {
+    this.speed = 0;
+    this.name = name;
+  }
+
+}
+
+class Rabbit extends Animal {
+
+  constructor(name, earLength) {
+    super(name);
+    this.earLength = earLength;
+  }
+
+}
+
+
+У стрелочных функций нет super
+class Rabbit extends Animal {
+  stop() {
+    setTimeout(() => super.stop(), 1000); // вызывает родительский stop после 1 секунды
+  }
+}
