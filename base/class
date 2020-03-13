@@ -26,7 +26,6 @@ class Rabbit extends Animal {
 У классов есть ключевое слово "super" для таких случаев.
 super.method(...) вызывает родительский метод.
 super(...) вызывает родительский конструктор (работает только внутри нашего конструктора).
-```
 class Animal {
 
   constructor(name) {
@@ -56,6 +55,5 @@ class Rabbit extends Animal {
     this.hide(); // и затем hide
   }
 }
-```
 
 
