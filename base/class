@@ -27,29 +27,24 @@ class Rabbit extends Animal {
 super.method(...) вызывает родительский метод.
 super(...) вызывает родительский конструктор (работает только внутри нашего конструктора).
 class Animal {
-
   constructor(name) {
     this.speed = 0;
     this.name = name;
   }
-
   run(speed) {
     this.speed = speed;
     alert(`${this.name} бежит со скоростью ${this.speed}.`);
   }
-
   stop() {
     this.speed = 0;
     alert(`${this.name} стоит.`);
   }
-
 }
 
 class Rabbit extends Animal {
   hide() {
     alert(`${this.name} прячется!`);
   }
-
   stop() {
     super.stop(); // вызываем родительский метод stop
     this.hide(); // и затем hide
@@ -58,21 +53,17 @@ class Rabbit extends Animal {
 
 Переопределение конструктора
 class Animal {
-
   constructor(name) {
     this.speed = 0;
     this.name = name;
   }
-
 }
 
 class Rabbit extends Animal {
-
   constructor(name, earLength) {
     super(name);
     this.earLength = earLength;
   }
-
 }
 
 
