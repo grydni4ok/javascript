@@ -1,0 +1,102 @@
+Статические свойства и методы
+
+Есть объекты статей Article, и нужна функция для их сравнения. Естественное решение – сделать для этого метод Article.compare:
+class Article {
+  constructor(title, date) {
+    this.title = title;
+    this.date = date;
+  }
+  static compare(articleA, articleB) {
+    return articleA.date - articleB.date;
+  }
+}
+// использование
+let articles = [
+  new Article("HTML", new Date(2019, 1, 1)),
+  new Article("CSS", new Date(2019, 0, 1)),
+  new Article("JavaScript", new Date(2019, 11, 1))
+];
+articles.sort(Article.compare);
+alert( articles[0].title ); // CSS
+
+Другим примером может быть так называемый «фабричный» метод. Представим, что нам нужно создавать статьи различными способами:
+1. Создание через заданные параметры (title, date и т. д.).
+2. Создание пустой статьи с сегодняшней датой.
+3. …или как-то ещё.
+class Article {
+  constructor(title, date) {
+    this.title = title;
+    this.date = date;
+  }
+  static createTodays() {
+    // помним, что this = Article
+    return new this("Сегодняшний дайджест", new Date());
+  }
+}
+let article = Article.createTodays();
+alert( article.title ); // Сегодняшний дайджест
+
+
+Приватные и защищённые методы и свойства
+
+Защищённые свойства обычно начинаются с префикса _.
+class CoffeeMachine {
+  _waterAmount = 0;
+  
+  set waterAmount(value) {
+    if (value < 0) throw new Error("Отрицательное количество воды");
+    this._waterAmount = value;
+  }
+  
+  get waterAmount() {
+    return this._waterAmount;
+  }
+  
+  constructor(power) {
+    this._power = power;
+  }
+}
+// создаём новую кофеварку
+let coffeeMachine = new CoffeeMachine(100);
+// устанавливаем количество воды
+coffeeMachine.waterAmount = -10; // Error: Отрицательное количество воды
+
+Свойство только для чтения «power».
+Для этого нам нужно создать только геттер, но не сеттер:
+class CoffeeMachine {
+  // ...
+  constructor(power) {
+    this._power = power;
+  }
+
+  get power() {
+    return this._power;
+  }
+}
+// создаём кофеварку
+let coffeeMachine = new CoffeeMachine(100);
+alert(`Мощность: ${coffeeMachine.power}W`); // Мощность: 100W
+coffeeMachine.power = 25; // Error (no setter)
+
+Приватное свойство
+Приватные свойства и методы должны начинаться с #. Они доступны только внутри класса.
+class CoffeeMachine {
+  #waterAmount = 0;
+  get waterAmount() {
+    return this.#waterAmount;
+  }
+
+  set waterAmount(value) {
+    if (value < 0) throw new Error("Отрицательный уровень воды");
+    this.#waterAmount = value;
+  }
+}
+let machine = new CoffeeMachine();
+machine.waterAmount = 100;
+alert(machine.#waterAmount); // Error
+
+
+
+
+
+
