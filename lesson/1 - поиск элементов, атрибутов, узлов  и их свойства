@@ -40,15 +40,17 @@ textContent - Текст внутри элемента: HTML за вычетом
 
 document.write('<td>') - запись в текущем месте
 
-data - cодержимое узлов, доступное на чтение и запись
-textContent - содержит только текст внутри элемента, за вычетом всех <тегов>
-
-Атрибуты:
+АТРИБУТЫ:
   elem.hasAttribute(name) – проверяет наличие атрибута
   elem.getAttribute(name) – получает значение атрибута
   elem.setAttribute(name, value) – устанавливает атрибут
   elem.removeAttribute(name) – удаляет атрибут
   elem.attributes - получение всех атрибутов свойства
+    for (let attr of elem.attributes) { // (4) весь список
+        alert( `${attr.name} = ${attr.value}` );
+    }
+  
+  
   className - соответствует атрибуту "class" 
   dataset - позволяет получить доступ к data атрибутам, через свойство (пример: 
     <div id="elem" data-about="Elephant"> alert(elem.dataset.about);)
@@ -58,18 +60,6 @@ textContent - содержит только текст внутри элемен
   elem.classList.add/remove("class") – добавляет/удаляет класс class
   elem.classList.toggle("class") – если класса class нет, добавляет его, если есть – удаляет
   Кроме того, можно перебрать классы через for, так как classList – это псевдо-массив
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
   
   
   
