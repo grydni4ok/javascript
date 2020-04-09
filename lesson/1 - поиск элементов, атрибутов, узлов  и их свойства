@@ -59,7 +59,7 @@ document.write('<td>') - запись в текущем месте
   elem.classList.contains("class") – возвращает true/false, в зависимости от того, есть ли у элемента класс class
   elem.classList.add/remove("class") – добавляет/удаляет класс class
   elem.classList.toggle("class") – если класса class нет, добавляет его, если есть – удаляет
-  Кроме того, можно перебрать классы через for, так как classList – это псевдо-массив
+  Кроме того, classList является перебираемым, поэтому можно перечислить все классы при помощи for..of
   
   
   
