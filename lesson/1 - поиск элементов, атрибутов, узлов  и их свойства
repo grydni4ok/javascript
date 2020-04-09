@@ -49,18 +49,12 @@ document.write('<td>') - запись в текущем месте
     for (let attr of elem.attributes) { // (4) весь список
         alert( `${attr.name} = ${attr.value}` );
     }
-  
-  
-  className - соответствует атрибуту "class" 
-  dataset - позволяет получить доступ к data атрибутам, через свойство (пример: 
+    
+dataset - позволяет получить доступ к data атрибутам, через свойство (пример: 
     <div id="elem" data-about="Elephant"> alert(elem.dataset.about);)
   
-Свойство classList – это объект для работы с классами
-  elem.classList.contains("class") – возвращает true/false, в зависимости от того, есть ли у элемента класс class
-  elem.classList.add/remove("class") – добавляет/удаляет класс class
-  elem.classList.toggle("class") – если класса class нет, добавляет его, если есть – удаляет
-  Кроме того, classList является перебираемым, поэтому можно перечислить все классы при помощи for..of
   
+
   
   
   
