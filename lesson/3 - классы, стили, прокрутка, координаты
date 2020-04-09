@@ -1,12 +1,19 @@
-element.style возвращает объект, который дает доступ к стилю элемента на чтение и запись
-  примеры:
-    element.style.width="100px"
-    background-color  => elem.style.backgroundColor
+className - соответствует атрибуту "class" 
+  
+Свойство classList – это объект для работы с классами
+  elem.classList.contains("class") – возвращает true/false, в зависимости от того, есть ли у элемента класс class
+  elem.classList.add/remove("class") – добавляет/удаляет класс class
+  elem.classList.toggle("class") – если класса class нет, добавляет его, если есть – удаляет
+  Кроме того, classList является перебираемым, поэтому можно перечислить все классы при помощи for..of
+
+Свойство elem.style – это объект, который соответствует тому, что написано в атрибуте "style". Установка стиля 
+elem.style.width="100px" работает так же, как наличие в атрибуте style строки width:100px
+Для свойства из нескольких слов используется camelCase: background-color  => elem.style.backgroundColor
     
 Свойство style.cssText позволяет поставить стиль целиком в виде строки. При установке style.cssText 
 все предыдущие свойства style удаляются.
-div.style.cssText="color: red !important; \
-    background-color: yellow; \ ";
+div.style.cssText="color: red !important;
+    background-color: yellow; ";
 
 Полный стиль из файла css - getComputedStyle
   alert( getComputedStyle(elem).width ); // вывести CSS-ширину для elem
