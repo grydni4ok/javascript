@@ -23,10 +23,14 @@ addEventListener и removeEventListener
   Методы addEventListener и removeEventListener являются современным способом назначить или удалить обработчик, и при этом 
   позволяют использовать сколько угодно любых обработчиков.
   
-  element.addEventListener(event, handler[, phase]); element.removeEventListener(event, handler[, phase]);
-  event - имя события, например click
-  handler - ссылка на функцию, которую надо поставить обработчиком.
-  phase - необязательный аргумент, «фаза», на которой обработчик должен сработать
+  element.addEventListener(event, handler[, options]); element.removeEventListener(event, handler[, phase]);
+  event - Имя события, например "click".
+  handler - Ссылка на функцию-обработчик.
+  options - Дополнительный объект со свойствами:
+    once: если true, тогда обработчик будет автоматически удалён после выполнения.
+    capture: фаза, на которой должен сработать обработчик. Так исторически сложилось, что options может быть false/true, это тоже 
+    самое, что {capture: false/true}.
+    passive: если true, то указывает, что обработчик никогда не вызовет preventDefault()
 
 
 elem.onclick = function(event) {}
