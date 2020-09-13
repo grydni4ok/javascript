@@ -90,6 +90,33 @@ Object.entries(obj) – возвращает массив пар [ключ, зн
 Используем Object.fromEntries(array) на результате, чтобы преобразовать его обратно в объект.
 
 
+Полезные штуки с обьектами
+Наибольшее значение из объекта
+let obj = {
+  'Jonh' : 200,
+  'Smit' : 300,
+  'Leo' : 100,
+  'Ana' : 300
+}
+function topSalary (obj) {
+  let maxSalary = Math.max(...Object.values(obj));  
+  return Object.keys(obj).filter( key => obj[key] === maxSalary );
+}
 
-
+Перегонка данных из массива в обьект
+let arr = ['orange', 'orange', 'banana', 'apple', 'apple'];
+let result = arr.reduce(function (accum, item) {
+  if (accum[item]){
+    accum[item] += 1;
+  } else {
+    accum[item] = 1;
+  }
+  return accum;
+}, {});
+получим
+result = {
+  orange: 2,
+  banana: 1,
+  apple: 2
+}
 
