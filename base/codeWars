@@ -1,0 +1,16 @@
+console.log(toWeirdCase( "String" )); //=> returns "StRiNg"
+console.log(toWeirdCase( "Weird string case" )); //=> returns "WeIrD StRiNg CaSe"
+
+function toWeirdCase(str) {
+  let arrWords = str.toLowerCase().split(' ');
+  let arrLetters;
+
+  for (let i = 0; i < arrWords.length; i++ ) {
+    arrLetters = arrWords[i].split('');
+    for (let j = 0; j < arrLetters.length; j += 2 ) {
+      arrLetters[j] = arrLetters[j].toUpperCase();
+    }
+  }
+
+  return arrWords.join(' ');
+}
