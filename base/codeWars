@@ -14,3 +14,19 @@ function toWeirdCase(str) {
 
   return arrWords.join(' ');
 }
+
+
+
+console.log(humanReadable(86399)); //'23:59:59'
+
+function humanReadable(seconds) {
+  let HH = Math.floor(seconds / 3600);
+  let MM = Math.floor(seconds / 60) % 60;
+  let SS = seconds % 60;
+
+  function pad(val) {
+    return val < 10 ? '0' + val : val;
+  }
+
+  return pad(HH) + ':' + pad(MM) + ':' + pad(SS);
+}
