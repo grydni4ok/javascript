@@ -34,24 +34,29 @@ promise.then(
 Первый аргумент метода .then – функция, которая выполняется, когда промис переходит в состояние «выполнен успешно», и получает результат.
 Второй аргумент .then – функция, которая выполняется, когда промис переходит в состояние «выполнен с ошибкой», и получает ошибку.
 
-Асинхронно подгрудаемая фунция с промисом
-function loadScript(src) {
-  return new Promise(function(resolve, reject) {
-    let script = document.createElement('script');
-    script.src = src;
+catch
+.catch перехватывает все виды ошибок в промисах: будь то вызов reject() или ошибка, брошенная в обработчике при помощи throw.
 
-    script.onload = () => resolve(script);
-    script.onerror = () => reject(new Error(`Ошибка загрузки скрипта ${src}`));
 
-    document.head.append(script);
+
+Async/await
+
+Ключевое слово async перед объявлением функции:
+Обязывает её всегда возвращать промис.
+Позволяет использовать await в теле этой функции.
+Ключевое слово await перед промисом заставит JavaScript дождаться его выполнения, после чего:
+
+Если промис завершается с ошибкой, будет сгенерировано исключение, как если бы на этом месте находилось throw.
+Иначе вернётся результат промиса.
+Вместе они предоставляют отличный каркас для написания асинхронного кода. Такой код легко и писать, и читать.
+
+Хотя при работе с async/await можно обходиться без promise.then/catch, иногда всё-таки приходится использовать эти методы (на верхнем уровне вложенности, например). 
+Также await отлично работает в сочетании с Promise.all, если необходимо выполнить несколько задач параллельно.
+
+async function f() {
+  let promise = new Promise((resolve, reject) => {
+    setTimeout(() => resolve("готово!"), 1000)
   });
+  let result = await promise; // будет ждать, пока промис не выполнится (*)
+  alert(result); // "готово!"
 }
-
-let promise = loadScript("https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.11/lodash.js");
-
-promise.then(
-  script => alert(`${script.src} загружен!`),
-  error => alert(`Ошибка: ${error.message}`)
-);
-
-promise.then(script => alert('Ещё один обработчик...'));
